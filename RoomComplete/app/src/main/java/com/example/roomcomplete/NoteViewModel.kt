@@ -14,8 +14,8 @@ class NoteViewModel(application: Application) : AndroidViewModel(application) {
         notes = repo.notes.asLiveData()
     }
 
-    fun addNote(text: String) = viewModelScope.launch {
-        repo.addNote(Note(text = text))
+    fun addNote(text: String, title: String) = viewModelScope.launch {
+        repo.addNote(Note(text = text,title = title))
     }
 
     fun deleteNote(note: Note) = viewModelScope.launch {
